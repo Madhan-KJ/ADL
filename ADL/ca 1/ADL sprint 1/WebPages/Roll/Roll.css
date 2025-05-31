@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(64, 64, 64);
+}
+
+.top {
+    position:absolute;
+    font-size: 30px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+    margin-left: 30px;
+    transition-delay: 10ms;
+}
+
+.top:hover {
+    background-color: rgb(150, 0, 0);
+    box-shadow: 2px 2px 5px black;
+}
+
+.top:active {
+    background-color: white;
+    color:black;
+}
+
+.box {
+    position:absolute;
+    background-color: white;
+    border:none;
+    border-radius:40px;
+    height: 400px;
+    width:600px;
+    display:inline-block;
+    padding:60px;
+    margin-top: 100px;;
+    margin-left: 390px;
+}
+
+.head {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 0px;;
+}
+
+.app,.off,.adm {
+    font-size: 40px;
+    display: block;
+    border:none;
+    border-radius: 100px;
+    background-color: rgb(43, 43, 43);
+    margin-top: 20px;
+    height: 70px;
+    width: 600px;
+    color: white;
+}
+
+.app:hover,.off:hover,.adm:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.app:active,.off:active,.adm:active {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Title Applicant</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dashboard1.css')}}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <h2>PRGI</h2>
+            <ul>
+                <li><a href="{{ url_for('common_routes.existing_titles') }}">Existing Titles</a></li>
+                <li><a href="{{ url_for('user_routes.user_history',username=user) }}">History</a></li>
+                <li><a href="{{ url_for('common_routes.settings', username=user) }}">Settings</a></li>
+                <li><a href="{{ url_for('common_routes.support', username=user) }}">Contact Support</a></li>
+                <li><a href=" {{ url_for('common_routes.helper')}} ">Help & Guidelines</a></li>
+                <li><a href="{{ url_for('auth.hero') }}">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <h1>Submit Title for Verification</h1>
+            <form class="verify-form" method="POST" action="{{ url_for('user_routes.analyze_title',username=user) }}">
+                <input type="text" name="title" placeholder="Enter Title" {%if title!=None%}value="{{title}}" {%endif%} required>
+                <a href="{{ url_for('user_routes.title_applicant_dashboard', username=user) }}" id="clear">&#8634; Refresh</a>
+                <button type="submit">Verify</button>
+            </form>
+        </main>
+        <!-- Notification button -->
+    <button class="notification-btn" onclick="toggleNotifications()">🔔</button>
+
+    <!-- Notification panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            Notifications
+        </div>
+        {% if check.notification %}
+        <div class="notification-content">
+            {% for notification in notifications %}
+            <div class="notification-item">
+                <textarea class="notification-text" readonly>{{ notification.content }}</textarea>
+                <div class="notification-time">
+                    {{ notification.timestamp }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="notification-content">
+            <div class="notification-item">
+                <div class="notification-time">
+                    Notifications are turned off...
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Simple toggle function -->
+    <script>
+        function toggleNotifications() {
+            const panel = document.getElementById('notificationPanel');
+            panel.classList.toggle('active');
+        }
+    </script>
+    </div>
+</body>
+</html>

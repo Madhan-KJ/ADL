@@ -1,0 +1,191 @@
+body,html {
+    margin:0;
+    padding:0;
+    background-color: rgb(64, 64, 64);
+}
+
+.top {
+    background-color: black;
+    height:60px;
+    width:250px;
+    display: inline-block;
+    margin:0;
+    padding:0;
+}
+
+.logo {
+    height: 40px;
+    margin-top:9px;
+    margin-left: 20px;
+}
+
+.prgi {
+    display: inline;
+    color:white;
+    font-size: 48px;
+    margin:0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 15px;
+}
+
+.buttons {
+    display:inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top:0;
+    background-color: black;
+    width:1256px;
+    height: 60px;
+    position: absolute;
+    padding-right: 30px;
+}
+
+.buttons1,.buttons2 {
+    font-size: 15px;
+    padding: 5px 5px;
+    margin-top: 0px;
+    margin-left:10px;
+    padding: 10px 20px;
+    color:white;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    transition-delay: 10ms;
+}
+
+.buttons1:hover,.buttons2:hover {
+    background-color: rgb(38, 38, 38);
+}
+
+.buttons1:active,.buttons2:active {
+    background-color: rgb(178, 178, 178);
+    color:rgb(30, 30, 30);
+}
+
+.buttons2 {
+    border:solid;
+    border-width: 1px;
+    border-color: white;
+    background-color: rgb(38, 38, 38);
+}
+
+.buttons2:hover {
+    background-color: black;
+}
+
+.title {
+    display:inline-block;
+    position:fixed;
+    background-color: white;;
+    height: 300px;
+    width:400px;
+    margin-top: 150px;
+    margin-left: 600px;
+    border-radius: 50px;
+    padding:50px;
+    box-shadow: 8px 8px 50px black;
+}
+
+.title1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin:0;
+    margin-bottom: 50px;
+}
+
+.title2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align:left;
+    margin: 8px;
+}
+
+.final {
+    position: fixed;
+    margin-top: 440px;
+    margin-left: 1430px;
+    font-size: 35px;
+    padding: 10px 10px;
+    border:none;
+    border-radius: 50px;;
+    background-color: black;
+    color:white;
+    transition-delay: 10ms;
+}
+
+.final:hover {
+    background-color: rgb(58, 58, 58);
+    border: white;
+    border:solid;
+    border-width: 1px;
+}
+
+.final:active {
+    background-color: rgb(225, 225, 225);
+    color:black
+}
+
+.hello {
+    color:white;
+    font-size: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 60px;
+    margin-top: 70px;
+}
+
+.prgi1 {
+    display:inline-block;
+    background-color: white;
+    position:fixed;
+    margin-top:50px;
+    height:200px;
+    width: 660px;
+    border-radius: 50px;
+    padding:50px;
+    margin-left:400px;
+    box-shadow: 8px 8px 50px black;
+}
+
+.ent {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    margin-top: 0px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.ent1 {
+    width:600px;
+    height:50px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border:none;
+    border-radius: 50px;
+    background-color: rgb(34, 34, 34);
+    color:white;
+    padding:3px 30px;
+}
+
+.ent2 {
+    background-color: rgb(0, 210, 0);
+    color:white;
+    border:none;
+    border-radius: 50px;
+    font-size: 25px;
+    padding: 10px 40px;
+    margin-left: 240px;
+    margin-top: 30px;
+}
+
+.ent2:hover {
+    cursor:pointer;
+    background-color: rgb(0, 107, 0);
+    box-shadow: 2px 2px 5px black;
+}
+
+.ent2:active {
+    background-color: white;
+    color:black;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Settings</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='Settings.css')}}">
+    </head>
+    <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <div class="box">
+            <div class="top">
+                <a href="{{ url_for('official_routes.official_dashboard', username=username) }}"><button class="x" disabled>&times;</button></a>
+                <p class="title">Settings</p>
+            </div>
+            <div class="info">
+                <div class="one">
+                    <p class="a">Account Settings</p>
+                    <button><p>Edit Profile</p></button>
+                    <button><p>Reset Password</p></button>
+                    <button><p>Privacy Settings</p></button>
+                    <button><p>Delete/Deactivate Account</p></button>
+                </div>
+                <div class="two">
+                    <p class="a">General Settings</p>
+                    <button><p>Theme</p></button>
+                    <button><p>Email & Notifications</p></button>
+                    <button><p>Appearance</p></button>
+                    <button><p>Restore Settings</p></button>
+                </div>
+                <div class="three">
+                    <p class="a">Data</p>
+                    <button><p>Clear Verification History</p></button>
+                    <button><p>Download Data/Export</p></button>
+                    <button><p>Storage & Cache</p></button>
+                    <button><p>Backup</p></button>
+                </div>
+                <div class="four">
+                    <button><p>Help & Guidelines</p></button>
+                    <button><p>Contact Support</p></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PRGI Press – Help &amp; Guidelines</title>
+
+  <!-- ---------- Internal CSS ---------- -->
+  <style>
+  :root {
+    --brand:#00539C;
+    --brand-light:#e6f0ff;
+    --bg:#fafafa;
+    --text:#333;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui, sans-serif;}
+  body            {background:var(--bg);color:var(--text);}
+  .wrapper        {display:flex;min-height:100vh;}
+
+  /* ----- Sidebar ----- */
+  .sidebar        {background:var(--brand);color:#fff;padding:2rem 1.5rem;width:220px;}
+  .sidebar h2     {margin-bottom:1.5rem;font-size:1.75rem;letter-spacing:1px;}
+  .sidebar ul     {list-style:none;}
+  .sidebar li+li  {margin-top:1rem;}
+  .sidebar a      {color:#fff;text-decoration:none;display:block;padding:.5rem .75rem;
+                   border-radius:.25rem;transition:background .2s;}
+  .sidebar a:hover{background:rgba(255,255,255,.15);}
+
+  /* ----- Main content ----- */
+  .content        {flex:1;padding:2.5rem 3rem;}
+  .content h1     {font-size:2rem;margin-bottom:1rem;color:var(--brand);}
+  .content section{margin-bottom:2.5rem;}
+  .content h2     {font-size:1.4rem;margin-bottom:.75rem;color:var(--brand);}
+  .content p      {line-height:1.6;margin-bottom:1rem;}
+  .content ul,
+  .content ol     {margin-left:1.5rem;margin-bottom:1rem;}
+
+  /* utilities */
+  .badge          {display:inline-block;padding:.15rem .45rem;border-radius:.25rem;
+                   font-size:.75rem;line-height:1;text-transform:uppercase;font-weight:600;
+                   background:var(--brand-light);color:var(--brand);}
+  .note           {padding:1rem;border-left:4px solid var(--brand);background:#fff4e5;
+                   font-size:.9rem;margin:.75rem 0;border-radius:.25rem;}
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ---------- Help & Guidelines ---------- -->
+  <main class="content">
+    <h1>Help &amp; Guidelines</h1>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About the Application</h2>
+      <p>
+        <strong>PRGI Press</strong> automates <em>title verification</em>, 
+        <em>registration</em> and <em>cataloguing</em> for more than
+        <span class="badge">160&nbsp;k+</span> book records.  
+        It replaces manual spreadsheet look-ups with a fast phonetic-search
+        engine powered by Supabase.
+      </p>
+    </section>
+
+    <!-- Verification -->
+    <section id="verification">
+      <h2>How Title Verification Works</h2>
+      <p>When you enter a proposed title, the engine applies several layers of checks to minimise duplicates and conflicts:</p>
+      <ol>
+        <li><strong>Phonetic Matching</strong> – converts titles to Soundex/Metaphone keys to catch homophones (<em>“Knight/ Night”</em>).</li>
+        <li><strong>Spelling-Variant Expansion</strong> – normalises British↔American spellings (<em>“colour/ color”</em>), diacritics (<em>“Café/ Cafe”</em>) and common typos.</li>
+        <li><strong>Semantic Similarity</strong> – embeds each title with a transformer model; cosine similarity &gt; 0.85 is flagged as <span class="badge">Possible Duplicate</span>.</li>
+        <li><strong>Restricted Words &amp; Affixes</strong> – blocks titles containing banned words (defamatory, discriminatory, trademarked) or prohibited affixes (e.g.&nbsp;<code>-pedia</code>, <code>Master-</code>) unless you have clearance.</li>
+      </ol>
+      <div class="note">
+        <strong>Tip:</strong> Even one flagged rule can stall registration. Resolve warnings or request an override from Editorial before resubmitting.
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow">
+      <h2>Typical Workflow</h2>
+      <ol>
+        <li>Open <strong>Title Verification</strong>.</li>
+        <li>Enter the proposed title and click <em>Verify</em>.</li>
+        <li>If the result is <span class="badge">Accepted</span>, continue to <strong>Register Title</strong>; otherwise review the conflicts.</li>
+        <li>After registering, our Officials will approve the registration, once all other external processes are completed.</li>
+        <li>On successful registration the title status appears instantly in <strong>History › Registration</strong> as <strong>Registered</strong>.</li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Need Help?</h2>
+      <p>Visit the <strong>Support</strong> section after logging in. Administrators aim to reply within <span class="badge">1&nbsp;business day</span>.</p>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

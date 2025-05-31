@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="container">
+        <h1>Title Registration</h1>
+        <form class="registration-form" method="POST" action="{{ url_for('user_routes.register_title', username=username) }}">
+            <!-- Title Details -->
+            <fieldset>
+                <legend>Title Details</legend>
+
+                <label for="title-name">Proposed Title Name</label>
+                <input type="text" name="title-name" id="title-name" required>
+
+                <label for="language">Language of Publication</label>
+                <input type="text" name="language" id="language" required>
+
+                <label for="periodicity">Periodicity</label>
+                <select name="periodicity" id="periodicity" required>
+                    <option value="">Select</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <label for="place">Place of Publication</label>
+                <input type="text" name="place" id="place" required>
+
+                <label for="category">Title Category</label>
+                <select name="category" id="category" required>
+                    <option value="">Select</option>
+                    <option value="newspaper">Newspaper</option>
+                    <option value="magazine">Magazine</option>
+                    <option value="journal">Journal</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="format">Publication Format</label>
+                <select name="format" id="format" required>
+                    <option value="">Select</option>
+                    <option value="printed">Printed</option>
+                    <option value="online">Online</option>
+                    <option value="both">Both</option>
+                </select>
+
+                <label for="justification">Title Justification</label>
+                <textarea name="justification" id="justification" placeholder="Explain your reason for this title selection..." required></textarea>
+            </fieldset>
+
+            <!-- Ownership Details -->
+            <fieldset>
+                <legend>Ownership Details</legend>
+
+                <label for="owner-name">Owner's Name</label>
+                <input type="text" name="owner-name" id="owner-name" required>
+
+                <label for="publisher-name">Publisher's Name</label>
+                <input type="text" name="publisher-name" id="publisher-name" required>
+
+                <label for="legal-entity">Legal Entity Type</label>
+                <input type="text" name="legal-entity" id="legal-entity" required>
+            </fieldset>
+
+            <!-- Applicant Details -->
+            <fieldset>
+                <legend>Applicant Details</legend>
+
+                <label for="applicant-name">Applicant's Full Name</label>
+                <input type="text" name="applicant-name" id="applicant-name" required>
+
+                <label for="applicant-username">Username</label>
+                <input type="text" name="applicant-username" id="applicant-username" required>
+
+                <label for="applicant-email">Email</label>
+                <input type="email" name="applicant-email" id="applicant-email" required>
+            </fieldset>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
